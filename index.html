@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Carrito de Compras con JS</title>
+   <link rel="stylesheet" href="./dist/css/main.css">
+   <link rel="shortcut icon" href="./dist/img/logo/logo.png" type="image/x-icon">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+</head>
+
+<body>
+   <div class="container">
+      <!-- Navbar -->
+      <nav>
+         <a href="https://github.com/danielnr25" target="_blank" class="logo"><span>Vudera</span></a>
+         <div class="navbar">
+            <a href="#" class="btn-carrito">🛒</a>
+            <div id="carrito">
+               <table class="mostrar" id="lista-carrito">
+                  <thead>
+                     <tr>
+                        <th>Producto</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th></th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                  <tfoot>
+                     <tr>
+                        <td colspan="2">Total</td>
+                        <td id="total-pagar">0</td>
+                     </tr>
+                  </tfoot>
+               </table>
+              <div class="btns-carrito">
+               <a href="#" id="pagar-compra">Pagar</a>
+               <a href="#" id="vaciar-carrito">Vaciar</a>
+              </div>
+            </div>
+         </div>
+      </nav>
+
+      <!-- Carrusel -->
+<!--       <section class="swiper carousel container">
+         <div class="swiper-wrapper">
+            <div class="swiper-slide">
+               <img src="https://d13xymm0hzzbsd.cloudfront.net/1/20230326/16798488073980.webp" alt="">
+            </div>
+            <div class="swiper-slide">
+               <img src="https://d13xymm0hzzbsd.cloudfront.net/1/20230326/16798488073050.webp" alt="">
+            </div>
+            <div class="swiper-slide">
+               <img src="https://d13xymm0hzzbsd.cloudfront.net/1/20230326/16798488074882.webp" alt="">
+            </div>
+         </div>
+         <button type="submit" class="swiper-button-next"></button>
+         <button type="submit" class="swiper-button-prev"></button>
+         <div class="swiper-pagination"></div>
+      </section>
+ -->
+      <!-- Tienda -->
+      <div id="lista-productos" class="container">
+            <h1 class="titulo">Tienda de productos</h1>
+         <div class="row">
+            <div class="card">
+               <img src="./dist/img/product1.jpg"  alt="">
+               <div class="card-header">
+                  <h3>Polo adidas small</h3>
+                  $<span>75</span>
+                  <a href="#" class="agregar-carrito" data-id="1">Agregar carrito</a>
+               </div>
+            </div>
+            <div class="card">
+               <img src="./dist/img/product2.jpg" alt="">
+               <div class="card-header">
+                  <h3>Audifonos Bluetooth</h3>
+                  $<span>79</span>
+                  <a href="#" class="agregar-carrito" data-id="2">Agregar carrito</a>
+               </div>
+            </div>
+            <div class="card">
+               <img src="./dist/img/product3.jpg"  alt="">
+               <div class="card-header">
+                  <h3>Casaca con capucha </h3>
+                  $<span>120</span>
+                  <a href="#" class="agregar-carrito" data-id="3">Agregar carrito</a>
+               </div>
+            </div>
+            <div class="card">
+               <img src="./dist/img/product4.jpg"  alt="">
+               <div class="card-header">
+                  <h3>Tomado unisex </h3>
+                  $<span>17</span>
+                  <a href="#" class="agregar-carrito" data-id="4">Agregar carrito</a>
+               </div>
+            </div>
+            <div class="card">
+               <img src="./dist/img/product5.jpg"  alt="">
+               <div class="card-header">
+                  <h3>Lentes primaverales </h3>
+                  $<span>90</span>
+                  <a href="#" class="agregar-carrito" data-id="5">Agregar carrito</a>
+               </div>
+            </div>
+            <div class="card">
+               <img src="./dist/img/product6.jpg"  alt="">
+               <div class="card-header">
+                  <h3>Gorra negra adidas</h3>
+                  $<span>12</span>
+                  <a href="#" class="agregar-carrito" data-id="6">Agregar carrito</a>
+               </div>
+            </div>
+            <div class="card">
+               <img src="./dist/img/product7.jpg"  alt="">
+               <div class="card-header">
+                  <h3>Mochila viajera</h3>
+                  $<span>59</span>
+                  <a href="#" class="agregar-carrito" data-id="7">Agregar carrito</a>
+               </div>
+            </div>
+            <div class="card">
+               <img src="./dist/img/product8.jpg"  alt="">
+               <div class="card-header">
+                  <h3>Zapatillas running</h3>
+                  $<span>125</span>
+                  <a href="#" class="agregar-carrito" data-id="8">Agregar carrito</a>
+               </div>
+            </div>
+            <div class="card">
+               <img src="./dist/img/product9.jpg"  alt="">
+               <div class="card-header">
+                  <h3>Polerea con capucha de básquet</h3>
+                  $<span>125</span>
+                  <a href="#" class="agregar-carrito" data-id="9">Agregar carrito</a>
+               </div>
+            </div>
+            <div class="card">
+               <img src="./dist/img/product10.jpg"  alt="">
+               <div class="card-header">
+                  <h3>Gorro beanie adventure</h3>
+                  $<span>45</span>
+                  <a href="#" class="agregar-carrito" data-id="10">Agregar carrito</a>
+               </div>
+            </div>
+            <div class="card">
+               <img src="./dist/img/product11.jpg"  alt="">
+               <div class="card-header">
+                  <h3>Zapatillas Samba OG</h3>
+                  $<span>235</span>
+                  <a href="#" class="agregar-carrito" data-id="11">Agregar carrito</a>
+               </div>
+            </div>
+            <div class="card">
+               <img src="./dist/img/product12.jpg"  alt="">
+               <div class="card-header">
+                  <h3>Short de básquet legends</h3>
+                  $<span>125</span>
+                  <a href="#" class="agregar-carrito" data-id="12">Agregar carrito</a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <!-- Swiper JS -->
+   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+   <script src="./dist/js/app.js"></script>
+</body>
+
+</html>
