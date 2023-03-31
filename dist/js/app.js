@@ -43,6 +43,9 @@ function cargarEventListener() {
       const totalPagarElement = document.getElementById('total-pagar');
       totalPagarElement.textContent = `$0`;
 
+      const cantidadCarritoElement = document.getElementById('cantidad-carrito');
+      cantidadCarritoElement.textContent = productosCarrito.length;
+
    })
 }
 
@@ -105,9 +108,6 @@ function insertarProducto() {
    })
    const totalPagarElement = document.getElementById('total-pagar');
    totalPagarElement.textContent = `$${totalPagar}`;
-
-   /* const cantidadCarritoElement = document.getElementById('cantidad-carrito');
-   cantidadCarritoElement.textContent = productosCarrito.length; */
    const cantidadCarrito = document.getElementById('cantidad-carrito');
    cantidadCarrito.textContent = productosCarrito.reduce((total, producto) => total + producto.cantidad, 0);
 
