@@ -24,6 +24,8 @@ function pagarCompra() {
       limpiarHTML();
       const totalPagarElement = document.getElementById('total-pagar');
       totalPagarElement.textContent = `$0`;
+      const cantidadCarritoElement = document.getElementById('cantidad-carrito');
+      cantidadCarritoElement.textContent = productosCarrito.length;
    }
 }
 
