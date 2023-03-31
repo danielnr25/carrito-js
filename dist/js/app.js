@@ -12,8 +12,20 @@ const carrito = document.querySelector("#carrito");
 const listaCarrito = document.querySelector("#lista-carrito tbody");
 const vaciarCarritoBtn = document.querySelector("#vaciar-carrito");
 const listaProductos = document.querySelector("#lista-productos");
-let totalPagar  = document.querySelector("#total-pagar");
 let productosCarrito = [];
+
+
+// Función que se ejecuta al presionar "Pagar"
+function pagarCompra() {
+   if (productosCarrito.length === 0) {
+      alert('No hay productos en el carrito');
+   } else {
+      alert('Compra realizada con éxito');
+      limpiarHTML();
+      const totalPagarElement = document.getElementById('total-pagar');
+      totalPagarElement.textContent = `$0`;
+   }
+}
 
 cargarEventListener();
 
@@ -27,6 +39,10 @@ function cargarEventListener() {
    vaciarCarritoBtn.addEventListener('click', () => {
       productosCarrito = []; // Reseteamos el arreglo
       limpiarHTML(); // Eliminamos todo el HTML
+      // vaciar carrito
+      const totalPagarElement = document.getElementById('total-pagar');
+      totalPagarElement.textContent = `$0`;
+
    })
 }
 
@@ -71,7 +87,7 @@ function insertarProducto() {
    let totalPagar = 0;
    productosCarrito.forEach(producto => {
       const { imagen, titulo, precio, cantidad, id } = producto;
-      const precioTotal = precio * cantidad; 
+      const precioTotal = precio * cantidad;
       totalPagar += precioTotal;
       const row = document.createElement('tr');
       row.innerHTML = `
@@ -89,6 +105,12 @@ function insertarProducto() {
    })
    const totalPagarElement = document.getElementById('total-pagar');
    totalPagarElement.textContent = `$${totalPagar}`;
+
+   /* const cantidadCarritoElement = document.getElementById('cantidad-carrito');
+   cantidadCarritoElement.textContent = productosCarrito.length; */
+   const cantidadCarrito = document.getElementById('cantidad-carrito');
+   cantidadCarrito.textContent = productosCarrito.reduce((total, producto) => total + producto.cantidad, 0);
+
 }
 
 

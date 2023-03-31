@@ -30,6 +30,7 @@ nav {
 }
 
 .logo {
+   text-decoration: none;
    width: 25%;
    padding-top: 1rem;
    padding-bottom: 1rem;
@@ -44,6 +45,10 @@ nav {
    padding: 0.5rem;
    text-transform: uppercase;
    letter-spacing: 0.1rem;
+}
+
+.logo span:hover{
+   color: indigo;
 }
 
 .navbar {
@@ -69,6 +74,19 @@ nav {
 .navbar #carrito {
    display: none;
 }
+
+#cantidad-carrito {
+   position: absolute;
+   top: 0;
+   right: 0;
+   background-color: red;
+   color: #fff;
+   font-size: 0.8rem;
+   font-weight: 700;
+   padding: 0.25rem 0.5rem;
+   border-radius: 50%;  
+}
+
 
 .navbar:hover #carrito {
    display: block;
@@ -366,6 +384,7 @@ img {
 }
 
 
+/* Estilo para dispositivos móviles menos de 740px */
 
 /* Estilos para dispositivos móviles */
 @media (max-width: 767px) {
@@ -432,6 +451,27 @@ img {
       margin-bottom: 0.8rem;
    }
 
+}
+
+@media screen and (max-width: 400px) {
+   #lista-carrito td,
+   #lista-carrito th {
+      padding: 0.2rem 0.01rem;
+      font-size: 0.61rem;
+     width: 100%;
+   }
+   #lista-carrito td{
+      padding: 0.5rem 1rem;
+     font-size: 0.75rem;
+   }
+   #lista-carrito img {
+      max-width: 160%;
+   }
+
+   .swiper-container {
+      width: 100%;
+      height: 15rem;
+   }
 }
 
 /* Estilos para tabletas */
